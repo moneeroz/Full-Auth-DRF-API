@@ -153,9 +153,10 @@ else:
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
     AWS_DEFAULT_ACL = "public-read"
     AWS_LOCATION = "static"
+    AWS_MEDIA_LOCATION = "media"
     AWS_S3_CUSTOM_DOMAIN = getenv("AWS_S3_CUSTOM_DOMAIN")
     STORAGES = {
-        "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
+        "default": {"BACKEND": "custom_storages.CustomS3Boto3Storag"},
         "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"},
     }
 
